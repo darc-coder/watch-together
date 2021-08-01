@@ -1,0 +1,19 @@
+{
+  "name": "watchtogether",
+  "version": "1.0.0",
+  "description": "This sample app by Nitin is used for watching a video clip synced between devices at the same time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "watch-together",
+    "watchme",
+    "livewatching"
+  ],
+  "author": "Nitin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
