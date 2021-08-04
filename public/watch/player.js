@@ -97,8 +97,16 @@ function onPlayerStateChange(event) {
         if (newvideoloaded) { // everything after new video loaded will be done here.
             setTitles();
             activateDeactivateInfo(true);
+            chatArea.classList.toggle("active");
+            setTimeout(() => {
+                chatIcon.classList.toggle("active");
+            }, 500);
             setTimeout(() => {
                 activateDeactivateInfo(false);
+                chatArea.classList.toggle("active");
+                setTimeout(() => {
+                    chatIcon.classList.toggle("active");
+                }, 500);
             }, 5000);
             newvideoloaded = false;
         }

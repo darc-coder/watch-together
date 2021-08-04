@@ -42,7 +42,7 @@ io.on('connection', (socket) => {
 
 // use params
 app.get('/watch', (req, res) => {
-    res.sendFile(path.join(__dirname + "/public/watch.html"))
+    res.sendFile(path.join(__dirname + "/public/watch/watch.html"))
 })
 
 server.listen(port, () => {

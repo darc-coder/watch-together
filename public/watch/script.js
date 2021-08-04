@@ -37,7 +37,7 @@ socket.on('playSeconds', playSeconds => {
     stringn = n.toFixed(5);
     offsetDisplay.innerText = stringn + 's';
 
-    if (Math.abs(lastPlaySeconds - playSeconds) > 1) {
+    if (Math.abs(lastPlaySeconds - playSeconds) > offset) {
         videoplayer.currentTime = playSeconds
         if (n > 10 || n < -10)
             console.log("jump in time: ", n)
@@ -51,7 +51,7 @@ socket.on('playSeconds', playSeconds => {
         offsetDisplay.classList.add('deactivated');
     }
 
-    lastPlaySeconds = playSeconds;
+    lastPlaySeconds = videoplayer.currentTime;
 })
 
 setInterval(() => {
