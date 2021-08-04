@@ -39,7 +39,8 @@ socket.on('playSeconds', playSeconds => {
 
     if (Math.abs(lastPlaySeconds - playSeconds) > 1) {
         videoplayer.currentTime = playSeconds
-        console.log("jump in time: ", n)
+        if (n > 10 || n < -10)
+            console.log("jump in time: ", n)
     }
     if (n > 0) {
         offsetDisplay.classList.remove('deactivated');
