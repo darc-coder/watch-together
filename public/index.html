@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Together</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="icons/main-icon.png">
+</head>
+
+<body>
+    <div class="TopBar">
+        <h2 class="title">Watch Together</h3>
+            <h4 class="sub-title">Watch Videos and Movies with Your Friends and Loved Ones</h4>
+    </div>
+    <div class="container">
+        <div class="main">
+            <div class="youtube">
+                <img src="icons/youtube-big.png" alt="youtube icon" srcset="">
+                <span class="text">Watch Youtube with Friends Now</span>
+            </div>
+
+            <div class="username-popup">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="text">Your Nickname</span>
+                        <span class="cross">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="username" id="username" placeholder="What is your Nickname?"
+                            required />
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-primary" type="submit" id="send-username">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal ends here -->
+        </div>
+    </div>
+    <footer>
+        <span class="text">
+            Brought to You by Nitz
+        </span>
+        <span class="text">
+            Special Thanks to Nitin (Nitz)
+        </span>
+        <span class="text">
+            Coded & Hosted by Nitz
+        </span>
+    </footer>
+
+</body>
+<script>
+    const youtubeBtn = document.querySelector('.youtube');
+    const usernameModal = document.querySelector('.username-popup');
+    const cross = document.querySelector('.cross');
+    const username = document.querySelector('#username');
+    const submit = document.querySelector('#send-username');
+
+    youtubeBtn.onclick = (e) => {
+        usernameModal.classList.toggle('active');
+    }
+
+    cross.onclick = (e) => {
+        usernameModal.classList.remove('active');
+    }
+
+    submit.onclick = (e) => {
+
+        if (username.value) {
+            // redirect to youtube
+            localStorage.setItem('username', username.value);
+            usernameModal.classList.remove('active');
+            window.location.href = '/watch';
+
+        }
+        else {
+            // throw error
+            alert("please enter your Nickname!")
+        }
+
+    }
+
+</script>
+
+</html>

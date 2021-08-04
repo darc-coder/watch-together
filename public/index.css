@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.5s ease-in-out;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.TopBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    height: 100px;
+    background-color: #3949ab;
+}
+
+.TopBar .title{
+    font-size: 3rem;
+    color: white;
+}
+
+.TopBar .sub-title{
+    font-size: 1rem;
+    color: lightgrey;
+    font-weight: 200;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .youtube{
+    display: block;
+    border: none;
+    height: 512px;
+    width: 512px;
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.main .username-popup{
+    display: none;
+    background-color: transparent;
+}
+
+.main .username-popup.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.username-popup .modal-content{
+    animation: updown 0.3s linear reverse forwards;
+}
+
+.username-popup.active .modal-content{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 250px;
+    width: 400px;
+    border-radius: 4px;
+    background-color: #fff;
+    animation: updown 0.3s linear forwards;
+}
+
+@keyframes updown{
+    from {
+        transform: translateY(-200%);
+    }
+
+    to{
+        transform: translateY(0%);
+    }
+}
+.username-popup .modal-header{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 4px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-header .cross{
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.username-popup .modal-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.username-popup .modal-body #username{
+    width: 80%;
+    height: 2rem;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    text-align: center;
+} 
+
+.username-popup .modal-footer{
+    display: flex;
+    padding: 4px 8px;
+    height: 50px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.modal-footer button{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    cursor: pointer;
+    color: white;
+    background-color: #007bff;
+    transition: 0.2s all;
+}
+
+.modal-footer button:hover{
+    background-color: #0077e6;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 8px 16px;
+    background-color: black;
+    color: white;
+    justify-content: space-around;
+}
+
+footer span.text{
+    font-size: 1.3rem;
+}
