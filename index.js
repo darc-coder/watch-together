@@ -16,7 +16,11 @@ app.get('/', (req, res) => {
 })
 
 io.on('connection', (socket) => {
-    console.log(socket.id)
+
+    socket.on('username', username => {
+        socket.username = username;
+        console.log(socket.id, socket.username)
+    })
 
     socket.on('myplaySeconds', playSeconds => {
         socket.broadcast.emit('playSeconds', playSeconds);
@@ -24,6 +28,14 @@ io.on('connection', (socket) => {
 
     socket.on('playerState', (currentState, id) => {
         socket.broadcast.emit('playerState', currentState, id);
+    })
+
+    socket.on('sendMsg', (Message) => {
+        socket.broadcast.emit('rcvMsg', Message, socket.username);
+    })
+
+    socket.on('videoID', (videoID) => {
+        socket.broadcast.emit('videoID', videoID);
     })
 });
 

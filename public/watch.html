@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watch Together</title>
+    <link rel="shortcut icon" href="icons/youtube.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://cdn.socket.io/3.1.3/socket.io.min.js'></script>
     <link rel="stylesheet" href="style.css">
-    <!-- <script src='https://cdn.socket.io/3.1.3/socket.io.min.js'></script>
-    <script src="player.js"></script> -->
+    <script src="player.js"></script>
     <script src="script.js" defer></script>
 </head>
 
@@ -16,17 +18,59 @@
     <div class="container">
         <div class="TopBar">
             <div class="searchArea">
-                <input type="text" name="search" id="search">
-                <input type="submit" value="search" id="searchButton">
+                <input type="text" name="search" id="search" value="https://www.youtube.com/watch?v=M7lc1UVf-VE">
+                <input type="button" value="search" id="searchButton">
+            </div>
+            <div class="info-area">
+                <span class="icon-bg" onclick="toggleInfo(event)">
+                    <span class="material-icons white">
+                        info
+                    </span>
+
+                    <span class="caret up"></span>
+                </span>
+                <div class="info-body">
+                    <p>Important!!</p>
+                    <li>Please dont click on the bottom related video panel.</li>
+                    <li>
+                        Right Click on Any video you want to watch and copy the link.
+                    </li>
+                    <li>Paste on the search bar above and click search</li>
+                </div>
             </div>
             <span id="offset-display">0.0</span>
         </div>
-        <div id="player">
+        <!-- Top bar Ends Here -->
+        <div id="player"></div>
 
+        <!-- Chat Area Start -->
+
+        <div id="chatArea">
+            <div id="chatIcon">
+                <img src="icons/chat.png" alt="chat-icon">
+                <span class="cross">&times;</span>
+            </div>
+            <span class="chat-header"></span>
+            <div class="chat-box">
+                <span class="chat other">
+                    <span class="username"> taru</span>
+                    <span class="msg">Hi nitz</span>
+                </span>
+
+                <span class="chat me">
+                    <span class="username"> nitz</span>
+                    <span class="msg">Hi taru, kesi ho tum ?</span>
+                </span>
+            </div>
+            <span class="text-input">
+                <input type="text" id="chatInput" placeholder="Type Text and press Enter to Send">
+            </span>
         </div>
+        <!-- Chat Area Ends Here -->
+
         <div class="title">
-            <span class="video-title"></span>
-            <span class="video-author"></span>
+            <span class="video-title">Video Title</span>
+            <span class="video-author">Nitz</span>
         </div>
     </div>
 </body>
