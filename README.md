@@ -4,7 +4,6 @@ This sample app by Nitin can be used for watching a youtube video clip synced be
 ## Technoogies Used
 - Expres JS
 - Socket.io
-- pug.js
 - Youtube IFrame Player API 
 
 ### Thanks for trying.
